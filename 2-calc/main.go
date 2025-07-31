@@ -88,8 +88,9 @@ func operateNumbers(strNumbers []string, operation string) float64 {
 
 		if len%2 == 0 {
 			result = (floatNumbers[len/2-1] + floatNumbers[len/2]) / 2
+		} else {
+			result = floatNumbers[len/2]
 		}
-		result = floatNumbers[len/2]
 
 	}
 
