@@ -1,18 +1,31 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type Bin struct {
-	id        string
-	private   bool
-	createdAt time.Time
-	name      string
+	Id        string
+	Private   bool
+	CreatedAt time.Time
+	Name      string
 }
 
-type BinList struct {
-	bins []Bin
+type BinList []Bin
+
+func createBin(id, name string, isPrivate bool) Bin {
+	newBin := Bin{
+		Id:        id,
+		Private:   isPrivate,
+		CreatedAt: time.Now(),
+		Name:      name,
+	}
+
+	return newBin
 }
 
 func main() {
-
+	newBin := createBin("Bin001", "New bin", false)
+	fmt.Println(newBin)
 }
